@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="html://www.thymeleaf.org">
+<head th:replace="common/head :: common-head" />
+<body>
+
+<nav th:replace="common/navbar :: common-navbar" />
+
+<div class="jumbotron text-center">
+  <h1 th:text="#{about.jumbotron.h1}" />
+  <p th:text="#{about.jumbotron.p}" /> 
+</div>
+  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <h3 th:text="#{about.content.column1.h3}" />
+      <p th:text="#{about.content.column1.p1}" />
+      <p th:text="#{about.content.column1.p2}" />
+    </div>
+    <div class="col-sm-6">
+      <h3 th:text="#{about.content.column2.h3}" />
+      <p th:text="#{about.content.column2.p1}" />
+      <p th:text="#{about.content.column2.p2}" />
+    </div>
+  </div>
+</div>
+
+<div th:replace="common/head :: common-body-script" />
+</body>
+</html>
