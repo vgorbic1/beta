@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="html://www.thymeleaf.org">
+<head th:replace="common/head :: common-head" />
+
+<body>
+	<div th:replace="common/navbar :: common-navbar" />
+	<div class="container">
+	
+	    <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <!-- a login/logout message -->
+                <div th:if="${param.error}" class="alert alert-danger alert-dismissible" role="alert">
+                    <p th:text="#{login.error.message}" />
+                </div>
+                <div th:if="${param.logout}" class="alert alert-success alert-dismissible" role="alert">
+                    <p th:text="#{login.logout.success}" />
+                </div>
+            </div>
+        </div>
+        
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="well">
+					<div class="text-center">
+						<h1 th:text="#{login.h1}"></h1>
+						<p class="lead" th:text="#{login.p}" />
+					</div>
+					<div class="text-left">
+						<form id="loginForm"
+							th:action="@{/login}"
+							method="post">
+							<div class="form-group">
+								<label for="username" th:text="#{login.username}" />
+								<input class="form-control" type="text" id="username" name="username" />
+							</div>
+							<div class="form-group">
+								<label for="password" th:text="#{login.password}" />
+								<input class="form-control" type="password" id="password" name="password" />
+							</div>
+							<div class="form-group">
+								<button type="submit" th:text="#{login.submit}" class="btn btn-primary"/>
+							</div>															
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div th:replace="common/head :: common-body-scripts" />
+</body>
+</html>
