@@ -4,9 +4,7 @@
 <nav th:fragment="common-navbar" class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">
-        <img th:src="@{/images/shield.png}" alt="logo" />
-      </a>
+      <a class="navbar-brand" href="/" th:text="#{navbar.brand}" />
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="/" th:text="#{navbar.menu.home}" /></li>
